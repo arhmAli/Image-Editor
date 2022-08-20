@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    font-size: 10px;
+}
+body{
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(ronan-dorard-DMXZ19sAdy4-unsplash.jpg);
+    background-size:cover;
+    
+}
+h2{
+    color: #5372F0;
+}
+.container{
+    font-size: 1.5rem;
+    width: 85rem;
+    background: #fff;
+    border-radius: 50px;
+    border: 5px solid rgb(38, 66, 109);
+    padding: 40px 35px 35px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    animation: mover 1.4s ;
+    transition: all 0.5s ease-out;
+}
+.container.disable :where(.editor-panel,.reset-filter,.save-img){
+opacity: 0.6;
+pointer-events: none;
+}
+.container.disable{
+    background: rgb(65,65,65);
+    background: radial-gradient(circle, rgba(65,65,65,1) 0%, rgba(17,15,15,1) 50%, rgba(74,74,75,1) 100%);}
+.container h2{
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+.container .wrapper{
+    display: flex;
+    margin: 20px 0;
+    min-height: 335px;
+}
+.wrapper .editor-panel{
+    width: 280px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+}
+.editor-panel .title{
+    display: block;
+    font-size: 1.7rem;
+    margin-bottom: 1.3rem;
+}
+.editor-panel .options , .controls{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.editor-panel button{
+    height: 40px;
+    font-size: 1.4rem;
+    color:#6C757D ;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid #aaa;
+}
+.editor-panel button:hover{
+    background: #f5f5f5;
+}
+.editor-panel .filter button{
+    width: calc(100%/2 - 1px);
+}
+.filter button:active{
+    color: #fff;
+    background: #5372F0;
+    border-color: #5372F0;
+}
+.editor-panel .slider{
+    margin-top: 12px;
+
+}
+.filter .slider .filter-info{
+    display: flex;
+    color: #464646;
+    font-size: 1.4rem;
+    justify-content: space-between;
+}
+.filter .slider input{
+    width: 100%;
+    height: 5px;
+    accent-color: #5372f0;
+}
+.editor-panel .rotate{
+    margin-top: 1.5rem;
+}
+.editor-panel .rotate button{  
+    width: calc(100%/4 - 3px);
+}
+.filter-info p{
+    font-size: 1.5rem;
+}
+.rotate button:nth-child(3),
+.rotate button:nth-child(4){
+    font-size: 1.8rem;
+}
+.wrapper .preview-img{
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;  
+    object-fit: cover;
+    width: 100%;
+    height: 100%;  
+/* max-width: 490px;
+    max-height: 335px;
+     width: 100%;
+     height: 100%;
+object-fit: contain; */
+    }
+.controls button{
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    color:#fff ;
+    background: rgb(3, 3, 3);
+    padding: 11px 20px;
+    border-radius: 3px;
+}
+.controls button:hover{
+    transform: scale(1.2);
+    transition: 0.5s ease;
+}
+.controls .reset-filter{
+    
+    border: 1px solid #293c4d;
+}
+.controls .reset-filter:hover{
+    transform: scale(1.2);
+    background-color:rgb(0, 162, 255);
+    transition: all 0.5s ease;
+}
+.controls .choose-img{
+    background: #6C757D;
+    border: 1px solid #6C757D;
+}
+.controls .save-img{
+    margin-left: 1rem;
+    background: #5372F0;
+    border: 1px solid #5372f0;
+}
+@media  screen and (max-width:500px){
+    .control button{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .controls .row{
+        width: 100%;
+    }
+    .controls .row .save-img{
+        margin-left: 0px;
+    }
+}
+@keyframes mover {
+    0% { transform: translateY(200px); }
+    70% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
